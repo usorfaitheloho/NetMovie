@@ -83,4 +83,47 @@ img {
 
   /* main section styling starts here */
   
+  main {
+    padding: 20px;
+  }
+
+  main h1 {
+    padding: 20px 0;
+  }
+
+  .movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .movie {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .movie-description {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn {
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    outline: none;
+  }
   
+  @media only screen and (min-width: 768px) {
+    .movies {
+      flex-direction: row;
+    }
+  }
