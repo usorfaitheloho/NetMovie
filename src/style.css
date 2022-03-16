@@ -2,10 +2,7 @@
 	/* primary colors */
 	--black: #000;
 	--white: #fff;
-	--deep-brown: #373928;
 	--gray: #d3d3d3;
-	--orange: #ce6a10;
-	--brown: #4f4e43;
 	--red: red;
 }
 
@@ -29,13 +26,17 @@ html {
 body {
 	width: 100%;
 	min-height: 100vh;
-	background-color: var(--white);
+	background-color: var(--black);
 	overflow-x: hidden;
 	position: relative;
 }
 
 a {
 	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
 }
 
 img {
@@ -48,82 +49,111 @@ img {
 
 .nav-element {
 	width: 100%;
-	padding: 0 5%;
-	padding-left: 4%;
-  z-index: 2;
-  display: flex;
+	padding: 5% 8%;
+	z-index: 2;
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-	.logo img {
-		width: 70px;
+.logo img {
+	width: 120px;
+}
+
+.nav-items {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.nav-items li {
+	font-size: 0.9rem;
+	line-height: 20px;
+	color: var(--white);
+	padding: 8px;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.nav-items li:hover {
+	color: var(--red);
+}
+
+/* main section styling starts here */
+
+main {
+	width: 85%;
+	margin: auto;
+}
+
+main h1 {
+	color: var(--white);
+	padding: 20px 0;
+	margin-bottom: 20px;
+}
+
+.movies {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	flex-direction: column;
+	padding: 20px 0;
+}
+
+.movie {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-direction: column;
+	box-shadow: 2px 2px 2px rgba(58, 57, 57, 0.2);
+	border-radius: 10px;
+	flex-wrap: wrap;
+	transition: all 1s ease;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+}
+
+.movie img {
+	height: 150px;
+}
+
+.movie-description {
+	display: flex;
+	justify-content: flex-start;
+	color: var(--white);
+	font-size: 0.8rem;
+	gap: 20px;
+ padding: 0 10px;
+}
+
+.btn {
+	background-color: var(--white);
+	padding: 7px 10px;
+	border-radius: 5px;
+	color: var(--black);
+	outline: none;
+	box-shadow: 1px 1px 2px rgba(248, 246, 246, 0.2);
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+	.nav-element {
+	padding: 2% 8%;
+}
+
+	.movies {
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
-	.nav-items {
-		display: flex;
-		gap: 10px;
-		justify-content: flex-end;
-		align-items: center;
+	.movie {
+		flex-wrap: wrap;
 	}
-
-	.nav-list li {
-			font-size: 0.9rem;
-		line-height: 20px;
-		color: var(--white);
-		padding: 8px;
-		border-radius: 10px;
-		text-align: center;
-    cursor: pointer;
-	}
-
-	.nav-list li:hover {
-		color: var(--red);
-	}
-
-  /* main section styling starts here */
-  
-  main {
-    padding: 20px;
-  }
-
-  main h1 {
-    padding: 20px 0;
-  }
-
-  .movies {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .movie {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-direction: column;
-  }
-
-  .movie-description {
-     display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .btn {
-    background-color: var(--red);
-    color: var(--white);
-    border: none;
-    outline: none;
-  }
-  
-  @media only screen and (min-width: 768px) {
-    .movies {
-      flex-direction: row;
-    }
-  }
+}
