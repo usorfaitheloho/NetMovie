@@ -151,7 +151,7 @@ main h1 {
   left: 0;
   font-weight: bolder;
   font-size: 15px;
-  color: #fff;
+  color: var(--white);
   margin-top:20px ;
   background-color: rgba(255, 0, 0, 0.678);
 }
