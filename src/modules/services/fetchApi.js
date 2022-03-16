@@ -18,7 +18,7 @@ const post = async (url,data) => {
     }
 
     try {
-        const res = await fetch(url, config);
+        const res = await fetch(url, onfig);
         const data = await res.json();
         return data
            
