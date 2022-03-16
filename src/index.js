@@ -1,6 +1,6 @@
 import './style.css';
-import renderNav from './nav';
-import renderMovies from './movies';
+import renderNav from './modules/nav';
+import renderMovies from './modules/movies';
 
 renderNav()
 renderMovies()
