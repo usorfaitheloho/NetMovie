@@ -1,4 +1,4 @@
-import logoIcon from '../images/netmovies.png'
+import logoIcon from '../images/netmovies.png';
 
 const navigations = `
   	  <nav class="nav-element">
@@ -11,10 +11,10 @@ const navigations = `
 					<li class="list">My List</li>
 				</ul>
 			</nav>
-`
+`;
 
 const renderNav = () => {
-	document.querySelector('#header').innerHTML = navigations
-}
+  document.querySelector('#header').innerHTML = navigations;
+};
 
-export default renderNav
+export default renderNav;

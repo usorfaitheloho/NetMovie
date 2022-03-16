@@ -1,4 +1,5 @@
-import movie from '../images/download.jpg'
+import movie from '../images/download.jpg';
+
 const movies = `
   	  <div class="movie">
 					<img src=${movie} />
@@ -89,9 +90,9 @@ const movies = `
 					</div>
 					<button class="btn">Comments</button>
 				</div>
-`
+`;
 const renderMovies = () => {
-	document.querySelector('.movies').innerHTML = movies
-}
+  document.querySelector('.movies').innerHTML = movies;
+};
 
-export default renderMovies
+export default renderMovies;
