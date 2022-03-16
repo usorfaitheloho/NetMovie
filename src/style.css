@@ -1,117 +1,117 @@
 :root {
-	/* primary colors */
-	--black: #000;
-	--white: #fff;
-	--gray: #d3d3d3;
-	--red: red;
+  /* primary colors */
+  --black: #000;
+  --white: #fff;
+  --gray: #d3d3d3;
+  --red: red;
 }
 
 /* global styling  */
 *,
 ::before,
 ::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html {
-	font-size: 1rem;
-	font-family: 'poppins', sans-serif;
-	font-style: normal;
-	font-weight: normal;
+  font-size: 1rem;
+  font-family: 'poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
 }
 
 body {
-	width: 100%;
-	min-height: 100vh;
-	background-color: var(--black);
-	overflow-x: hidden;
-	position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--black);
+  overflow-x: hidden;
+  position: relative;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* header styling starts here */
 
 .nav-element {
-	width: 100%;
-	padding: 5% 8%;
-	z-index: 2;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  width: 100%;
+  padding: 5% 8%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo img {
-	width: 120px;
+  width: 120px;
 }
 
 .nav-items {
-	display: flex;
-	gap: 10px;
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .nav-items li {
-	font-size: 0.9rem;
-	line-height: 20px;
-	color: var(--white);
-	padding: 8px;
-	border-radius: 10px;
-	text-align: center;
-	cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 20px;
+  color: var(--white);
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .nav-items li:hover {
-	color: var(--red);
+  color: var(--red);
 }
 
 /* main section styling starts here */
 
 main {
-	width: 85%;
-	margin: auto;
+  width: 85%;
+  margin: auto;
 }
 
 main h1 {
-	color: var(--white);
-	padding: 20px 0;
-	margin-bottom: 20px;
+  color: var(--white);
+  padding: 20px 0;
+  margin-bottom: 20px;
 }
 
 .movies {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 50px;
-	flex-direction: column;
-	padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-direction: column;
+  padding: 20px 0;
 }
 
 .movie {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	flex-direction: column;
-	box-shadow: 2px 2px 2px rgba(58, 57, 57, 0.2);
-	border-radius: 10px;
-	flex-wrap: wrap;
-	transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  box-shadow: 2px 2px 2px rgba(58, 57, 57, 0.2);
+  border-radius: 10px;
+  flex-wrap: wrap;
+  transition: all 1s ease;
 }
 
 .movie:hover {
@@ -119,41 +119,38 @@ main h1 {
 }
 
 .movie img {
-	height: 150px;
+  height: 150px;
 }
 
 .movie-description {
-	display: flex;
-	justify-content: flex-start;
-	color: var(--white);
-	font-size: 0.8rem;
-	gap: 20px;
- padding: 0 10px;
+  display: flex;
+  justify-content: flex-start;
+  color: var(--white);
+  font-size: 0.8rem;
+  gap: 20px;
+  padding: 0 10px;
 }
 
 .btn {
-	background-color: var(--white);
-	padding: 7px 10px;
-	border-radius: 5px;
-	color: var(--black);
-	outline: none;
-	box-shadow: 1px 1px 2px rgba(248, 246, 246, 0.2);
-
-
+  background-color: var(--white);
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: var(--black);
+  outline: none;
+  box-shadow: 1px 1px 2px rgba(248, 246, 246, 0.2);
 }
 
 @media only screen and (min-width: 768px) {
+  .nav-element {
+    padding: 2% 8%;
+  }
 
-	.nav-element {
-	padding: 2% 8%;
-}
+  .movies {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-	.movies {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-
-	.movie {
-		flex-wrap: wrap;
-	}
+  .movie {
+    flex-wrap: wrap;
+  }
 }
