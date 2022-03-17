@@ -18,7 +18,7 @@ const post = async (url,data) => {
     }
 
     try {
-        const res = await fetch(url, onfig);
+        const res = await fetch(url, config);
         const data = await res.json();
         return data
            
@@ -26,3 +26,5 @@ const post = async (url,data) => {
          return error  
        } 
 }
+
+export const fetchApi = { post, get }
