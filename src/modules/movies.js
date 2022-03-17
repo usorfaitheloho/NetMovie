@@ -1,26 +1,30 @@
 import fetchShows from './services/userServices'
 
-
-const shows = fetchShows()
-const movies =
-shows.forEach((show) => {
-  `
-<div class="movie">
-<img src=${show.images} />
-<div class="movie-description">
-<p>${show.name}</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter">${show.id}likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
-`;
-});
-
-const renderMovies = () => {
-  document.querySelector('.movies').innerHTML = movies;
-};
-
-export default renderMovies;
+const renderMovies = async data => {
+	data.forEach((show, index) => {
+		const movies = document.querySelector('.movies')
+		if (index < 20) {
+			movies.innerHTML += `
+        <div class="movie">
+        <img src=${show.image.medium} alt="movie-pic"/>
+        <div class="movie-description">
+        <p>${show.name}</p>
+        <div class="movie-likes">
+        <i class="far fa-heart" id="${show.id}"></i>
+        <div class="counter">
+        <span><span>
+        <span ${show.id}>Likes<span>
+        </div>
+        </div>
+        </div>
+        <button class="btn" id=${show.id}>Comments</button>
+        </div>
+        `
+		}
+	})
+}
+const showMovies = async () => {
+	const data = await fetchShows()
+	renderMovies(data)
+}
+export default showMovies
