@@ -1,96 +1,24 @@
-import movie from '../images/download.jpg';
+import fetchShows from './services/userServices'
 
-const movies = `
-<div class="movie">
-<img src=${movie} />
-<div class="movie-description">
-<p>Space 1</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
-<div class="movie">
-<img src=${movie} />
-<div class="movie-description">
-<p>Space 1</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
 
+const shows = fetchShows()
+const movies =
+shows.forEach((show) => {
+  `
 <div class="movie">
-<img src=${movie} />
+<img src=${show.images} />
 <div class="movie-description">
-<p>Space 1</p>
+<p>${show.name}</p>
 <div class="movie-likes">
 <i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
-<div class="movie">
-<img src=${movie} />
-<div class="movie-description">
-<p>Space 2</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
-<div class="movie">
-<img src=${movie} />
-<div class="movie-description">
-<p>Space 3</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
-<div class="movie">
-<img src=${movie} />
-<div class="movie-description">
-<p>Space 4</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
-<div class="movie">
-<img src=${movie} />
-<div class="movie-description">
-<p>Space 5</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
-</div>
-</div>
-<button class="btn">Comments</button>
-</div>
-<div class="movie">
-<img src=${movie} />
-<div class="movie-description">
-<p>Space 6</p>
-<div class="movie-likes">
-<i class="far fa-heart"></i>
-<div class="counter"> 5 likes</div>
+<div class="counter">${show.id}likes</div>
 </div>
 </div>
 <button class="btn">Comments</button>
 </div>
 `;
+});
+
 const renderMovies = () => {
   document.querySelector('.movies').innerHTML = movies;
 };
