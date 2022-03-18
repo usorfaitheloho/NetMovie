@@ -142,18 +142,24 @@ main h1 {
 }
 
 .footer-element {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  padding: 20px 0 0 20px;
-  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   bottom: 0;
   left: 0;
   font-weight: bolder;
-  font-size: 15px;
   color: var(--white);
-  margin-top: 20px;
-  background-color: rgba(255, 0, 0, 0.678);
+  margin-top: 40px;
+  border-top: 2px solid var(--white);
+  font-size: 1.2rem;
+}
+
+.footer-element a {
+  padding: 0 20px;
+  color: var(--white);
 }
 
 /* comment section styling starts here */
