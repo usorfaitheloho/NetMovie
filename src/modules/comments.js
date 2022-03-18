@@ -1,9 +1,7 @@
-import fetchShows from './services/userServices'
 
-const renderComments = async comments => {
-	console.log(comments)
+const showComments = comments => {
+    const content = document.querySelector('.comment-section')
 	comments.forEach((comment, index) => {
-		const content = document.querySelector('.comment-section')
 		if (index < 20) {
 			content.innerHTML += `
 <div class ="movie-detail">
@@ -31,9 +29,5 @@ const renderComments = async comments => {
 </div>`
 		}
 	})
-}
-const showComments = async () => {
-	const data = await fetchShows()
-	renderComments(data)
 }
 export default showComments

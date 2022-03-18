@@ -188,7 +188,9 @@ main h1 {
   border-radius: 10px;
   position: relative;
   background: url("./images/thunder.jpg") no-repeat;
-  background-size: contain;
+  background-size: auto;
+  background-color: gray;
+  background-blend-mode: multiply;
 }
 
 .close i {
