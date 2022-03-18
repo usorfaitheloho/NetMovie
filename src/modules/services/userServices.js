@@ -1,12 +1,9 @@
 import { SHOWS_API, INVOLVEMENT_API, COMMENTS } from './rootEndpoints'
 import { get, post } from './fetchApi'
-import showMovies from '../movies.js'
-import showComments from '../comments'
 
 export const fetchShows = async () => {
-	const data = await get(SHOWS_API)
-  showMovies(data)
-	showComments(data)
+  const data = await get(SHOWS_API)
+  return data
 }
 
 export const getUserId = async () => {
@@ -14,9 +11,14 @@ export const getUserId = async () => {
 	return id
 }
 
+export const postComments = async (data) => {
+	const result = await post(`${INVOLVEMENT_API}/${COMMENTS}`, data)
+	return result
+}
+
 export const getComments = async () => {
 	const data = await get(`${INVOLVEMENT_API}/${COMMENTS}`)
-
+ return data
 }
 
 export default getComments

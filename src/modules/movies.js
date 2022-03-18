@@ -1,5 +1,7 @@
-import {updateLikes} from './likes'
-const showMovies = (data) => {
+import fetchShows from './services/userServices'
+
+const showMovies = async() => {
+	const data = await fetchShows()
 	const movies = document.querySelector('.movies')
 	data.forEach((show, index) => {
 		if (index < 20) {
@@ -11,21 +13,16 @@ const showMovies = (data) => {
         <div class="movie-likes">
         <i class="far fa-heart" id="${show.id}"></i>
         <div class="counter">
-        <span class="count"><span>
+        <span><span>
         <span ${show.id}>Likes<span>
         </div>
         </div>
         </div>
-        <button class=${show.name} id=${show.id}>Comments</button>
+        <button class="btn" id=${show.id}>Comments</button>
         </div>
         `
 		}
-    })
-    
-    document.querySelectorAll('.count').forEach((e, i) => {
-        const count = i + 1
-        updateLikes(count, e)
-     })
-
+	})
 }
+
 export default showMovies
