@@ -1,7 +1,6 @@
 import movie from '../images/download.jpg';
 
-
-const comments =`
+const comments = `
 <div class ="comments">
     <div class="movie-detail">
        <div class="movie-image">
@@ -24,6 +23,6 @@ const comments =`
 </div>
 `;
 const renderComments = () => {
-    document.querySelector('.comment-section').innerHTML = comments ;
+  document.querySelector('.comment-section').innerHTML = comments;
 };
-export default renderComments ;
+export default renderComments;

@@ -120,7 +120,7 @@ main h1 {
 
 .movie img {
   height: 150px;
-  width:200px;
+  width: 200px;
 }
 
 .movie-description {
@@ -141,11 +141,10 @@ main h1 {
   box-shadow: 1px 1px 2px rgba(248, 246, 246, 0.2);
 }
 
-.footer-element{
+.footer-element {
   width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: 20px 0 0 20px;
   height: 40px;
   bottom: 0;
@@ -153,11 +152,11 @@ main h1 {
   font-weight: bolder;
   font-size: 15px;
   color: var(--white);
-  margin-top:20px ;
+  margin-top: 20px;
   background-color: rgba(255, 0, 0, 0.678);
 }
 
-.comment-section{
+.comment-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,20 +176,24 @@ main h1 {
   background-color: #fff;
   transition: all 1s ease;
 }
-.movie-image{
+
+.movie-image {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 30px 0  30px 0;
 }
-.movie-detail img{
+
+.movie-detail img {
   width: 40vw;
 }
-.movie-detail h2{
+
+.movie-detail h2 {
   font-size: 50px;
   text-align: center;
   padding-bottom: 30px;
 }
+
 form {
   align-self: center;
   display: flex;
@@ -199,6 +202,7 @@ form {
   width: 30%;
   gap: 20px;
 }
+
 input {
   border: 2px solid #000;
 }
@@ -209,13 +213,14 @@ textarea {
   border-radius: 5px;
   border: 2px solid #000;
 }
-.show-comment{
+
+.show-comment {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 2px solid #000 ;
- width :50%;
+  border: 2px solid #000;
+  width: 50%;
 }
 
 #submit {
@@ -231,7 +236,6 @@ textarea {
   opacity: 0.9;
   cursor: pointer;
 }
-
 
 @media only screen and (min-width: 768px) {
   .nav-element {
