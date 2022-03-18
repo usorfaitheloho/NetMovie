@@ -1,4 +1,5 @@
 import fetchShows from './services/userServices'
+import { getLikesData } from './LikeCounter.js';
 
 const showMovies = async () => {
 	const movies = document.querySelector('.movies')
@@ -14,7 +15,7 @@ const showMovies = async () => {
         <div class="movie-likes">
         <i class="far fa-heart" id="${show.id}"></i>
         <div class="likes-counter">
-        <span id=likes>${show.likes}</span>
+        <span id=liked-icon>${show.id}</span>
         <span>likes</span>
         </div>
         </div>
@@ -22,11 +23,20 @@ const showMovies = async () => {
         <button class="btn" id=${show.id}>Comments</button>
         </div>
         `
-		}
+      }
     }).join('')
      
 }
-const modalButtons = document.querySelectorAll('.btn');
-console.log(modalButtons)
+
+// const likesArray = await getLikesData();
+//   likesArray.forEach((a) => {
+//     Shows.forEach((show) => {
+//       if (a.item_id === show.id) {
+//         show.likes = a.likes;
+//       } else if (show.likes === undefined) {
+//         show.likes = 0;
+//       }
+//     });
+//   });
 
 export default showMovies

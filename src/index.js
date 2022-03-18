@@ -3,11 +3,15 @@
 import './style.css'
 import renderNav from './modules/nav.js'
 import renderComments from './modules/comments.js'
-import showMovies from './modules/movies.js'
+import showMovies from './modules/movies.js';
+import addLike from './modules/addLike.js';
 
 renderNav()
 renderComments()
 showMovies()
+addLike();
+console.log(showMovies)
+console.log(addLike)
 
 const modal = document.querySelector('.movie-detail');
 console.log(modal)

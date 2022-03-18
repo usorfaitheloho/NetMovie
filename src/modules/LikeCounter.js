@@ -1,5 +1,5 @@
 const baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const appId = 'IONInnzNi3VRPNlFloAi';
+const appId = 'UA1qh5oDK24p7rhA1W5m';
 
 const getLikesData = async () => {
   let data = await fetch(`${baseUrl}${appId}/likes`);

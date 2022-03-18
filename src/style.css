@@ -170,6 +170,9 @@ main h1 {
 	display: "none";
   transition: all 1s ease;
 }
+.movie-likes:hover{
+  cursor: pointer;
+}
 
 @keyframes modalopen {
 	from {
