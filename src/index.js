@@ -1,37 +1,50 @@
-
-
 import './style.css'
 import renderNav from './modules/nav.js'
-import {fetchShows, getUserId} from './modules/services/userServices'
+import { fetchShows } from './modules/services/userServices.js'
+import showMovies from './modules/movies'
+import { closePopup, openPopup } from './modules/popupAction.js'
+import showPopup from './modules/comments.js'
+import { postComments, getComments } from './modules/services/userServices.js'
 
+postComments()
 
 renderNav()
-fetchShows()
-getUserId()
+const seePopups = async shows => {
+	const commentBtn = document.querySelectorAll('.btn')
+	commentBtn.forEach(btn => {
+		btn.addEventListener('click', async () => {
+      const showId = btn.id
+      const showName = btn.getAttribute('itemname')
+      openPopup()
+			showPopup(shows[showId - 1], getComments)
+			const hidePopup = document.querySelector('.close')
+			hidePopup.addEventListener('click', closePopup)
 
-const modal = document.querySelector('.movie-detail')
-console.log(modal)
+			const form = document.querySelector('#new-comment')
+      form.addEventListener('submit', async e => {
+				e.preventDefault()
+				const name = document.querySelector('.input-name')
+				const comment = document.querySelector('#comment')
+				const newComment = {
+					item_id: showName,
+					username: name.value,
+					comment: comment.value,
+				}
 
-// event listeners for opening modal on button click
-const modalButtons = Array.from(document.querySelectorAll('.btn'))
-console.log(modalButtons)
-const modals = Array.from(document.querySelectorAll('.movie-detail'))
-console.log(modals)
-
-const modalButtonZip = modalButtons.map((button, i) => [button, modals[i]])
-
-console.log(modalButtonZip)
-modalButtonZip.forEach(pair => {
-	pair[0].addEventListener('click', () => {
-		pair[1].style.display = 'block'
-	})
-})
-
-// event listener for closing modal on button click
-document.querySelectorAll('.close').forEach(close => {
-	close.addEventListener('click', () => {
-		document.querySelectorAll('.movie-detail').forEach(modal => {
-			modal.style.display = 'none'
+				await postComments(newComment)
+				await showPopup(shows[showId - 1], getComments)
+				form.reset()
+				const hidePopup = document.querySelector('.close-btn')
+				hidePopup.addEventListener('click', closePopup)
+			})
 		})
 	})
-})
+}
+
+const shows = async () => {
+	const list = await fetchShows()
+	showMovies(list)
+	seePopups(list)
+}
+shows()
+

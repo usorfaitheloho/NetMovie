@@ -1,7 +1,5 @@
-import fetchShows from './services/userServices'
 
-const showMovies = async() => {
-	const data = await fetchShows()
+const showMovies = async(data) => {
 	const movies = document.querySelector('.movies')
 	data.forEach((show, index) => {
 		if (index < 20) {
@@ -18,7 +16,7 @@ const showMovies = async() => {
         </div>
         </div>
         </div>
-        <button class="btn" id=${show.id}>Comments</button>
+        <button class="btn" id=${show.id} itemname="${show.id}">Comments</button>
         </div>
         `
 		}
