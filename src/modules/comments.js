@@ -1,5 +1,7 @@
+import commentsCounter from './commentsCounterjs'
 
-const showComments = comments => {
+const showComments = (comments, updateComments) => {
+    
     const content = document.querySelector('.comment-section')
 	comments.forEach((comment, index) => {
 		if (index < 20) {

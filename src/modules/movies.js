@@ -1,4 +1,4 @@
-
+import {updateLikes} from './likes'
 const showMovies = (data) => {
 	const movies = document.querySelector('.movies')
 	data.forEach((show, index) => {
@@ -11,15 +11,21 @@ const showMovies = (data) => {
         <div class="movie-likes">
         <i class="far fa-heart" id="${show.id}"></i>
         <div class="counter">
-        <span><span>
+        <span class="count"><span>
         <span ${show.id}>Likes<span>
         </div>
         </div>
         </div>
-        <button class="btn" id=${show.id}>Comments</button>
+        <button class=${show.name} id=${show.id}>Comments</button>
         </div>
         `
 		}
-	})
+    })
+    
+    document.querySelectorAll('.count').forEach((e, i) => {
+        const count = i + 1
+        updateLikes(count, e)
+     })
+
 }
 export default showMovies
