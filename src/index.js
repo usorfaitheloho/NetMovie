@@ -9,7 +9,7 @@ renderNav()
 renderComments()
 showMovies()
 
-const modal = document.querySelector('.movie');
+const modal = document.querySelector('.movie-detail');
 console.log(modal)
 
 
