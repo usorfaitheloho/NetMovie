@@ -8,7 +8,7 @@ const navigations = `
 <ul class="nav-items">
 <li class="list">Series</li>
 <li class="list">Film</li>
-<li class="list">My List</li>
+<li class="list" id="shows-counter">My List</li>
 </ul>
 </nav>
 `;

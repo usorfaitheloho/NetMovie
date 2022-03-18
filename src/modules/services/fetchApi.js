@@ -1,4 +1,4 @@
-const get = async (url) => {
+export const get = async (url) => {
    try {
     const res = await fetch(url);
     const data = await res.json();
@@ -10,7 +10,7 @@ const get = async (url) => {
 
 }
 
-const post = async (url,data) => {
+export const post = async (url,data) => {
     const config ={
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -18,7 +18,7 @@ const post = async (url,data) => {
     }
 
     try {
-        const res = await fetch(url, onfig);
+        const res = await fetch(url, config);
         const data = await res.json();
         return data
            
