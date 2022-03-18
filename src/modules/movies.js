@@ -5,6 +5,7 @@ const showMovies = async () => {
 	const movies = document.querySelector('.movies')
 	const data = await fetchShows()
   
+  
 	movies.innerHTML = data.map((show, index) => {
 		if (index < 20) {
 			return `
@@ -27,6 +28,11 @@ const showMovies = async () => {
     }).join('')
      
 }
+
+
+
+
+
 
 // const likesArray = await getLikesData();
 //   likesArray.forEach((a) => {

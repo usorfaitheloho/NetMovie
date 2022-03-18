@@ -3,7 +3,7 @@
 import './style.css'
 import renderNav from './modules/nav.js'
 import renderComments from './modules/comments.js'
-import showMovies from './modules/movies.js';
+import showMovies from './modules/movies2.js';
 import addLike from './modules/addLike.js';
 
 renderNav()
