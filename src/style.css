@@ -157,65 +157,102 @@ main h1 {
   background-color: rgba(255, 0, 0, 0.678);
 }
 
-.comment-section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px 0;
-}
+/* comment section styling starts here */
 
-.comments {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-direction: column;
-  box-shadow: 2px 2px 2px rgba(58, 57, 57, 0.2);
-  border-radius: 10px;
-  flex-wrap: wrap;
-  padding: 40px 30px 40px 30px;
-  background-color: #fff;
+.comment-section {
+  position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	z-index: 2;
+	animation: modalopen 1s ease-out;
+	display: "none";
   transition: all 1s ease;
 }
-.movie-image{
+
+@keyframes modalopen {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.movie-detail {
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  position: relative;
+}
+
+.close i {
+  color: var(--white);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+}
+
+.movie-image {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 30px 0  30px 0;
+  align-items: center;
+  padding: 50px 0;
 }
-.movie-detail img{
-  width: 40vw;
+
+.movie-image img{
+  width: 30%;
 }
-.movie-detail h2{
-  font-size: 50px;
+
+.comment-description {
+  color: var(--white);
+  padding: 50px;
   text-align: center;
-  padding-bottom: 30px;
 }
+
+.comment-description h2 {
+  font-size: 3rem;
+  padding: 10px 0;
+}
+
+.comment-description p {
+  font-size: 1.5rem;
+  line-height: 32px;
+  text-align: justify;
+}
+
 form {
   align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
   gap: 20px;
+  width: 50%;
+  margin: auto;
 }
 input {
-  border: 2px solid #000;
+  padding: 20px;
+
 }
 
 textarea {
-  height: 80%;
   padding: 5px;
   border-radius: 5px;
   border: 2px solid #000;
+  height: 200px;
 }
+
 .show-comment{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 2px solid #000 ;
- width :50%;
+  color: white;
 }
 
 #submit {

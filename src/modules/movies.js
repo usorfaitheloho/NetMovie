@@ -1,10 +1,12 @@
 import fetchShows from './services/userServices'
 
-const renderMovies = async data => {
-	data.forEach((show, index) => {
-		const movies = document.querySelector('.movies')
+const showMovies = async () => {
+	const movies = document.querySelector('.movies')
+	const data = await fetchShows()
+  
+	movies.innerHTML = data.map((show, index) => {
 		if (index < 20) {
-			movies.innerHTML += `
+			return `
         <div class="movie">
         <img src=${show.image.medium} alt="movie-pic"/>
         <div class="movie-description">
@@ -21,10 +23,10 @@ const renderMovies = async data => {
         </div>
         `
 		}
-	})
+    }).join('')
+     
 }
-const showMovies = async () => {
-	const data = await fetchShows()
-	renderMovies(data)
-}
+const modalButtons = document.querySelectorAll('.btn');
+console.log(modalButtons)
+
 export default showMovies
