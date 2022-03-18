@@ -6,7 +6,7 @@ const showPopup = async (data, updateComment) => {
 	const content = document.querySelector('.popup-section')
 	content.innerHTML += `
 <div class ="movie-detail">
- <div class=close ${data.id}>
+ <div class="close">
   <i class="fa fa-times fa-1x"></i>
     </div>
     <div class="movie-image">
@@ -29,8 +29,8 @@ const showPopup = async (data, updateComment) => {
     </div>
     <div class ="form-end">
       <form id="new-comment">
-        <input class="name-input" name="username" type="text" placeholder="Your name" required>
-        <textarea id="comment" name="comment">Add your comment here</textarea>
+        <input class="name-input" type="text" placeholder="Your name" required>
+        <textarea>Add your comment here</textarea>
         <button class="btn-submit" id="submit" type="submit">Comment</button>
       </form>
     </div>

@@ -4,7 +4,7 @@ import { fetchShows } from './modules/services/userServices.js'
 import showMovies from './modules/movies'
 import { closePopup, openPopup } from './modules/popupAction.js'
 import showPopup from './modules/comments.js'
-import { postComments, getComments} from './modules/services/userServices.js'
+import { postComments, getComments, getId} from './modules/services/userServices.js'
 
 renderNav()
 const seePopups = shows => {
@@ -15,8 +15,7 @@ const seePopups = shows => {
       const showName = btn.getAttribute('itemname')
       openPopup()
 			showPopup(shows[showId - 1], getComments)
-			const hidePopup = document.querySelector(`.${showId}`)
-            console.log(hidePopup);
+			const hidePopup = document.querySelector('.close')
 			hidePopup.addEventListener('click', closePopup)
 
 			const form = document.querySelector('#new-comment')
