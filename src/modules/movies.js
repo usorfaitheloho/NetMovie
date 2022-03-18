@@ -1,30 +1,32 @@
-import { get } from './services/fetchApi.js';
-import { SHOWS_API } from './services/rootEndpoints.js';
+import fetchShows from './services/userServices'
 
-const Movies = document.querySelector('.movies');
-const renderMovies = async (data) => {
-  let moviesHTML = '';
-  data.forEach((show, index) => {
-    if (index < 20) {
-      moviesHTML += `
+const showMovies = async () => {
+	const movies = document.querySelector('.movies')
+	const data = await fetchShows()
+  
+	movies.innerHTML = data.map((show, index) => {
+		if (index < 20) {
+			return `
         <div class="movie">
-        <img src=${show.image.medium} />
+        <img src=${show.image.medium} alt="movie-pic"/>
         <div class="movie-description">
         <p>${show.name}</p>
         <div class="movie-likes">
-        <i class="far fa-heart"></i>
-        <div class="counter"> ${show.likes}</div>
+        <i class="far fa-heart" id="${show.id}"></i>
+        <div class="counter">
+        <span><span>
+        <span ${show.id}>Likes<span>
         </div>
         </div>
-        <button class="btn">Comments</button>
         </div>
-        `;
-    }
-  });
-  Movies.innerHTML = moviesHTML;
-};
-const showMovies = async () => {
-  const data = await get(SHOWS_API);
-  renderMovies(data);
-};
-export default showMovies;
+        <button class="btn" id=${show.id}>Comments</button>
+        </div>
+        `
+		}
+    }).join('')
+     
+}
+const modalButtons = document.querySelectorAll('.btn');
+console.log(modalButtons)
+
+export default showMovies
