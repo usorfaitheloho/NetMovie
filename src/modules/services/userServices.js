@@ -7,15 +7,11 @@ export const fetchShows = async () => {
 }
 
 export const postComments = async data => {
-	const result = await post('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', data)
-	console.log(result);
+	const result = await post(`${INVOLVEMENT_API}/${APP_ID}/${COMMENTS}`, data)
 	return result
 }
 
 export const getComments = async id => {
-	// const data = await get(
-	// 	`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/UA1qh5oDK24p7rhA1W5m/comments?item_id=${id}`,
-	// )
-	// console.log(data)
-	// return data
+	const data = await get(`${INVOLVEMENT_API}/${APP_ID}/${COMMENTS}?item_id=${id}`)
+	return data
 }
