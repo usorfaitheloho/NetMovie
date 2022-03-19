@@ -4,6 +4,7 @@ const showMovies = async(data) => {
 	data.forEach((show, index) => {
 		if (index < 8) {
 			movies.innerHTML += `
+
         <div class="movie">
         <img src=${show.image.medium} alt="movie-pic"/>
         <div class="movie-description">
