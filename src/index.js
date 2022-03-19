@@ -37,7 +37,7 @@ const displayPopups = async (shows) => {
         };
         await postComments(newComment);
         showPopups(shows[id - 1], getComments);
-				const hidePopup = document.querySelector('.close');
+        const hidePopup = document.querySelector('.close');
         hidePopup.addEventListener('click', closePopup);
         form.reset();
       });
