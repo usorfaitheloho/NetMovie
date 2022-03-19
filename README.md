@@ -2,7 +2,7 @@
 
 # NETSHOW.
 
-> Netshow is an movie web app that hosts various types of shows. Users can select any movie of their choice, see what other viewers have to say about the series, view more details about the movie, like the movie, and also leave their comments. The application was built using vanilla JavaScript, CSS, and HTML
+> Netshow is a movie web app that hosts various types of shows. Users can select any movie of their choice, see what other viewers have to say about the series, view more details about the movie, like the movie, and also leave their comments. The application was built using vanilla JavaScript, CSS, and HTML
 
 ![screenshot](/src/images/asset1.PNG)
 
