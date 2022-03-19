@@ -14,7 +14,6 @@ export const post = async (url, data) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   };
-
   try {
     const res = await fetch(url, config);
     const data = await res.json();
@@ -23,3 +22,4 @@ export const post = async (url, data) => {
     return error;
   }
 };
+
