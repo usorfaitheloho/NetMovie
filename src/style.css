@@ -259,7 +259,10 @@ form {
 
 .input-name {
   padding: 20px;
+}
 
+.counter {
+  color: var(--red);
 }
 
 textarea {
