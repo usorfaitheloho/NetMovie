@@ -1,5 +1,6 @@
 import { updateLikes } from './services/userServices.js';
 
+
 const showMovies = async (data) => {
   const movies = document.querySelector('.movies');
   data.forEach((show, index) => {

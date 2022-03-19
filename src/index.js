@@ -60,3 +60,4 @@ document.querySelector('main').addEventListener('click', async (e) => {
     await updateLikes(id, container);
   }
 });
+
