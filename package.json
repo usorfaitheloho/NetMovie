@@ -22,6 +22,7 @@
   "homepage": "https://github.com/usorfaitheloho/Movie-app#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.5.1",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
