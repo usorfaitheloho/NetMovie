@@ -1,8 +1,8 @@
 export const get = async url => {
 	try {
 		const res = await fetch(url)
-		const data = await res.json()
-		return data
+		const datas = await res.json()
+		return datas
 	} catch (error) {
 		return error
 	}
@@ -17,8 +17,7 @@ export const post = async (url, data) => {
 
 	try {
 		const res = await fetch(url, config)
-		const data = await res.json()
-		return data
+	   return res.text
 	} catch (error) {
 		return error
 	}

@@ -1,48 +1,35 @@
-import fetchShows from './services/userServices'
-import { getLikesData } from './LikeCounter.js';
-
-const showMovies = async () => {
+import { updateLikes } from './services/userServices.js'
+const showMovies = async data => {
 	const movies = document.querySelector('.movies')
-	const data = await fetchShows()
-  
-  
-	movies.innerHTML = data.map((show, index) => {
-		if (index < 20) {
-			return `
+	data.forEach((show, index) => {
+		if (index < 8) {
+			movies.innerHTML += `
         <div class="movie">
         <img src=${show.image.medium} alt="movie-pic"/>
         <div class="movie-description">
         <p>${show.name}</p>
-        <div class="movie-likes">
-        <i class="far fa-heart" id="liked-icon"></i>
-        <div class="likes-counter">
-        <span id="liked-icon">${show.id}</span>
-        <span>likes</span>
+        <span class="movie-likes">
+          <span>
+               <i id="${show.id}" class="far fa-heart"></i>
+           </span>
+            <input type="number" id="${show.id}" class="countLikes" value="" name=""
+            <span id="${show.id}">Likes</span>
+        </span>
+        </div>
+         <button class="btn" id=${show.id} itemname="${show.name}">Comments</button>
         </div>
         </div>
-        </div>
-        <button class="btn" id=${show.id}>Comments</button>
+       
         </div>
         `
-      }
-    }).join('')
-     
+		}
+	})
+
+	const count = document.querySelectorAll('.countLikes')
+	count.forEach((e, index) => {
+		const countLike = index + 1
+		updateLikes(countLike, e)
+	})
 }
-
-
-
-
-
-
-// const likesArray = await getLikesData();
-//   likesArray.forEach((a) => {
-//     Shows.forEach((show) => {
-//       if (a.item_id === show.id) {
-//         show.likes = a.likes;
-//       } else if (show.likes === undefined) {
-//         show.likes = 0;
-//       }
-//     });
-//   });
 
 export default showMovies

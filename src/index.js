@@ -1,42 +1,63 @@
-
-
 import './style.css'
 import renderNav from './modules/nav.js'
-import renderComments from './modules/comments.js'
-import showMovies from './modules/movies2.js';
-import addLike from './modules/addLike.js';
+import { fetchShows } from './modules/services/userServices.js'
+import showMovies from './modules/movies'
+import showPopups from './modules/comments.js'
+import { openPopup, closePopup } from './modules/popupAction'
+import {
+	getComments,
+	postComments,
+	postLikes,
+	updateLikes,
+} from './modules/services/userServices.js'
 
 renderNav()
-renderComments()
-showMovies()
-addLike();
-console.log(showMovies)
-console.log(addLike)
 
-const modal = document.querySelector('.movie-detail');
-console.log(modal)
+const displayPopups = async shows => {
+	const commentBtn = document.querySelectorAll('.btn')
+	commentBtn.forEach(btn => {
+		btn.addEventListener('click', async () => {
+			const id = btn.id
+			const itemname = btn.getAttribute('itemname')
+			openPopup()
+			await showPopups(shows[id - 1], getComments)
+			const hidePopup = document.querySelector('.close')
+			hidePopup.addEventListener('click', closePopup)
 
+			const form = document.querySelector('#new-comment')
+				form.addEventListener('submit', async e => {
+				e.preventDefault()
 
-// event listeners for opening modal on button click
-const modalButtons = Array.from(document.querySelectorAll('.btn'));
-console.log(modalButtons)
-const modals = Array.from(document.querySelectorAll('.movie-detail'))
-console.log(modals);
-
-const modalButtonZip = modalButtons.map((button, i) => [button, modals[i]]);
-
-console.log(modalButtonZip)
-modalButtonZip.forEach((pair) => {
-  pair[0].addEventListener('click', () => {
-    pair[1].style.display = 'block';
-  });
-});
-
-// event listener for closing modal on button click
-document.querySelectorAll('.close').forEach((close) => {
-  close.addEventListener('click', () => {
-    document.querySelectorAll('.movie-detail').forEach(modal => {
-			modal.style.display = 'none'
+				const username = document.querySelector('.input-name').value
+				const comment = document.querySelector('#comment').value
+				const newComment = {
+					item_id: itemname,
+					username,
+					comment,
+				}
+				await postComments(newComment)
+				showPopups(shows[id - 1], getComments)
+				form.reset()
+				document.querySelector('.close-btn').addEventListener('click', closePopup())
+			})
 		})
-  });
-});
+	})
+}
+
+const shows = async () => {
+	const list = await fetchShows()
+	showMovies(list)
+	displayPopups(list)
+}
+shows()
+
+document.querySelector('main').addEventListener('click', async e => {
+	
+	if (e.target.className === 'far fa-heart') {
+		const string = e.target.id
+		const id = parseInt(string, 10)
+		await postLikes(id)
+		const container = e.target.parentElement.nextElementSibling
+		await updateLikes(id, container)
+	}
+})

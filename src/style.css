@@ -125,11 +125,11 @@ main h1 {
 
 .movie-description {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   color: var(--white);
   font-size: 0.8rem;
   gap: 20px;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .btn {
@@ -142,24 +142,30 @@ main h1 {
 }
 
 .footer-element {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  padding: 20px 0 0 20px;
-  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   bottom: 0;
   left: 0;
   font-weight: bolder;
-  font-size: 15px;
   color: var(--white);
-  margin-top: 20px;
-  background-color: rgba(255, 0, 0, 0.678);
+  margin-top: 40px;
+  border-top: 2px solid var(--white);
+  font-size: 1.2rem;
+}
+
+.footer-element a {
+  padding: 0 20px;
+  color: var(--white);
 }
 
 /* comment section styling starts here */
 
 .comment-section {
-  /* position: fixed; */
+  position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -169,12 +175,6 @@ main h1 {
 	animation: modalopen 1s ease-out;
 	display: "none";
   transition: all 1s ease;
-}
-i:hover{
-  cursor: pointer;
-}
-.fa-heart {
-  color: rgb(245, 17, 17);
 }
 
 @keyframes modalopen {
@@ -194,7 +194,20 @@ i:hover{
   border-radius: 10px;
   position: relative;
   background: url("./images/thunder.jpg") no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-color: gray;
+  background-blend-mode: multiply;
+}
+
+.movie-likes {
+  width: 25px;
+}
+
+.countLikes {
+  pointer-events: none;
+  background: none;
+  border: none;
+  color: #fff;
 }
 
 .close i {
@@ -203,6 +216,7 @@ i:hover{
   top: 20px;
   right: 20px;
   font-size: 32px;
+  cursor: pointer;
 }
 
 .movie-image {
@@ -228,7 +242,7 @@ i:hover{
 }
 
 .comment-description p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 32px;
   text-align: justify;
 }
@@ -243,7 +257,7 @@ form {
   margin: auto;
 }
 
-input {
+.input-name {
   padding: 20px;
 
 }
@@ -264,8 +278,8 @@ textarea {
 }
 
 #submit {
-  width: 80px;
-  padding: 6px;
+   margin: 20px 0;
+  padding: 10px 15px;
   border-radius: 5px;
   background-color: skyblue;
   align-self: center;
