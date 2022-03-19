@@ -62,13 +62,13 @@ Then run the server:
 
 
 
-## Author 1
+## Faith Usor
 
 - GitHub: [@githubhandle](https://github.com/usorfaitheloho)
 - Twitter: [@twitterhandle](https://twitter.com/faithusor16)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/faith-usor)
 
- **Author 2** 
+ **Okoroji Victor Ebube** 
 - GitHub: [@githubhandle](https://github.com/vickymarz)
 - Twitter: [@twitterhandle](https://twitter.com/Vicky_mars)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/okoroji-victor-ebube-8791741a0/)
