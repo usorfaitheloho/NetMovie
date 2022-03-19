@@ -16,7 +16,7 @@ const showMovies = async(data) => {
         </div>
         </div>
         </div>
-        <button class="btn" id=${show.id} itemname="${show.id}">Comments</button>
+        <button class="btn" id=${show.id} itemname="${show.name}">Comments</button>
         </div>
         `
 		}
