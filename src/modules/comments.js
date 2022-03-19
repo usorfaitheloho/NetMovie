@@ -34,7 +34,7 @@ const showPopups = async (data, updateComment) => {
   <div class ="form-end">
     <form id="new-comment">
       <input type="text" placeholder="Your name" class="input-name" name="username" required>
-      <textarea name="comment" id="comment" required>Add your comment here</textarea>
+      <textarea name="comment"  placeholder="comment" id="comment" required></textarea>
       <button class="btn-submit" id="submit" type="submit">Comment</button>
     </form>
   </div>
