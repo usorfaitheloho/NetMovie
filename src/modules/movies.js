@@ -1,4 +1,6 @@
 import { updateLikes } from './services/userServices.js'
+import { countShowList } from './count'
+
 const showMovies = async data => {
 	const movies = document.querySelector('.movies')
 	data.forEach((show, index) => {
@@ -24,6 +26,7 @@ const showMovies = async data => {
         `
 		}
 	})
+	countShowList()
 
 	const count = document.querySelectorAll('.countLikes')
 	count.forEach((e, index) => {
