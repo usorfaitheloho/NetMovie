@@ -5,10 +5,10 @@ const main = document.querySelector('main')
 const footer = document.querySelector('footer')
 
 export const openPopup = () => {
+	commentPopup.style.display = 'block'
 	header.style.display = 'none'
 	main.style.display = 'none'
 	footer.style.display = 'none'
-	commentPopup.style.display = 'block'	
 }
 
 export const closePopup = () => {
