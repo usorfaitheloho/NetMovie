@@ -6,6 +6,7 @@
 
 ![screenshot](/src/images/asset1.PNG)
 
+
 Application was built with HTML, CSS, JavaScript and Webpack to meet the need of a Capstone project website. 
 
 ## Built With
@@ -19,8 +20,9 @@ Application was built with HTML, CSS, JavaScript and Webpack to meet the need of
 
 ## Live Demo
 
-- [Live Demo Link](https://kingsleyibe.github.io/capstone-2/dist/)
-- [Live Video Link](https://www.loom.com/share/fff4ce355e0d47aa9a4813fb98cf5f95)
+- [Live Demo Link](https://github.com/usorfaitheloho/Movie-app/dist/)
+
+- [link to video recording](https://drive.google.com/file/d/1e8F0edOXMpBgH7Fleg9ngES-H2GjbiNF/view?usp=sharing)
 
 
 ## Getting Started
