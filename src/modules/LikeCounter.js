@@ -8,7 +8,7 @@ const getLikesData = async () => {
 };
 
 const postLikes = async (showId, element) => {
-  await fetch(`${baseUrl}${appId}/likes`, {
+  await fetch( `${baseUrl}${appId}/likes`, {
     method: 'POST',
     body: JSON.stringify({
       item_id: showId,

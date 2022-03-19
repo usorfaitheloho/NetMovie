@@ -14,9 +14,9 @@ const showMovies = async () => {
         <div class="movie-description">
         <p>${show.name}</p>
         <div class="movie-likes">
-        <i class="far fa-heart" id="${show.id}"></i>
+        <i class="far fa-heart" id="liked-icon"></i>
         <div class="likes-counter">
-        <span id=liked-icon>${show.id}</span>
+        <span id="liked-icon">${show.id}</span>
         <span>likes</span>
         </div>
         </div>

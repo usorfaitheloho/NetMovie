@@ -170,8 +170,11 @@ main h1 {
 	display: "none";
   transition: all 1s ease;
 }
-.movie-likes:hover{
+i:hover{
   cursor: pointer;
+}
+.fa-heart {
+  color: rgb(245, 17, 17);
 }
 
 @keyframes modalopen {

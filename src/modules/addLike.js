@@ -14,5 +14,4 @@ const addLike = () => {
     }
   });
 };
-
 export default addLike;

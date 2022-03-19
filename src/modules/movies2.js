@@ -14,9 +14,9 @@ const renderMovies = async (data) => {
       <div class="movie-description">
       <p>${show.name}</p>
       <div class="movie-likes">
-      <i class="far fa-heart" id="${show.id}"></i>
+      <i class="far fa-heart" id=liked-icon></i>
       <div class="likes-counter">
-      <span id=liked-icon>${show.id}</span>
+      <span >${show.id}</span>
       <span>likes</span>
       </div>
       </div>
@@ -35,7 +35,7 @@ const showMovies = async () => {
 
   const likesArray = await  getLikesData();
   likesArray.forEach((a) => {
-    Shows.forEach((show) => {
+    data.forEach((show) => {
       if (a.item_id === show.id) {
         show.likes = a.likes;
       } else if (show.likes === undefined) {
