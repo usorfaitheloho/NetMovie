@@ -19,7 +19,7 @@ Application was built with HTML, CSS, JavaScript and Webpack to meet the need of
 
 ## Live Demo
 
-- [Live Demo Link](https://kingsleyibe.github.io/capstone-2/dist/)
+- [Live Demo Link](https://usorfaitheloho.github.io/Movie-app/dist/)
 - [Live Video Link](https://www.loom.com/share/fff4ce355e0d47aa9a4813fb98cf5f95)
 
 
