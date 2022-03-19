@@ -22,3 +22,4 @@ export const post = async (url, data) => {
 		return error
 	}
 }
+
