@@ -1,2 +1,2 @@
-const countShow = list => list.length
-export default countShow
+const countShow = (list) => list.length;
+export default countShow;
