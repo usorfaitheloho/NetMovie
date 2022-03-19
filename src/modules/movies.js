@@ -28,11 +28,11 @@ const showMovies = async data => {
 	})
 	countShowList()
 
-	const count = document.querySelectorAll('.countLikes')
-	count.forEach((e, index) => {
-		const countLike = index + 1
-		updateLikes(countLike, e)
-	})
-}
+  const count = document.querySelectorAll('.countLikes');
+  count.forEach((e, index) => {
+    const countLike = index + 1;
+    updateLikes(countLike, e);
+  });
+};
 
-export default showMovies
+export default showMovies;
