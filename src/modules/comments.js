@@ -1,13 +1,13 @@
-import commentsCounter from './commentsCounter'
+import commentsCounter from './commentsCounter.js';
 
 const showPopups = async (data, updateComment) => {
-	const comments = await updateComment(data.name)
-	console.log(comments)
-	const commentNum = commentsCounter(comments)
+  const comments = await updateComment(data.name);
 
-	const content = document.querySelector('.popup-section')
+  const commentNum = commentsCounter(comments);
 
-	content.innerHTML = `
+  const content = document.querySelector('.popup-section');
+
+  content.innerHTML = `
 <div class ="movie-detail">
   <button type="button" class="close">
     <i class="fa fa-times fa-1x" id="close"></i>
@@ -22,13 +22,13 @@ const showPopups = async (data, updateComment) => {
   <div class="show-comment">
     <h3> Comments (${commentNum || 0})</h3>
   <ul class="comments-list">${comments
-		.map(
-			comment => `<li class="comment-item">
+    .map(
+      (comment) => `<li class="comment-item">
     <span class="creation-date">${comment.creation_date}</span>
     <span class="username"> ${comment.username}:</span>
     <span class="comment-msg"> ${comment.comment}</span></li>`,
-		)
-		.join('')}                                  
+    )
+    .join('')}                                  
     </ul>
   </div>
   <div class ="form-end">
@@ -38,7 +38,7 @@ const showPopups = async (data, updateComment) => {
       <button class="btn-submit" id="submit" type="submit">Comment</button>
     </form>
   </div>
-</div>`
-}
+</div>`;
+};
 
-export default showPopups
+export default showPopups;
