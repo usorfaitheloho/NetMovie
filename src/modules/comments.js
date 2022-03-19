@@ -1,11 +1,12 @@
 import commentsCounter from './commentsCounter'
-import { closePopup } from './popupAction.js'
-import { postComments } from './services/userServices.js'
 
-const showPopup = async (data, updateComment) => {
+const showPopups = async (data, updateComment) => {
 	const comments = await updateComment(data.name)
+	console.log(comments)
 	const commentNum = commentsCounter(comments)
+
 	const content = document.querySelector('.popup-section')
+
 	content.innerHTML = `
 <div class ="movie-detail">
   <button type="button" class="close">
@@ -20,43 +21,24 @@ const showPopup = async (data, updateComment) => {
   </div>
   <div class="show-comment">
     <h3> Comments (${commentNum || 0})</h3>
-      <ul class="comments-list">
-        ${comments
-					.map(
-						comment => `<li class="comment-item">
+  <ul class="comments-list">${comments
+		.map(
+			comment => `<li class="comment-item">
+    <span class="creation-date">${comment.creation_date}</span>
     <span class="username"> ${comment.username}:</span>
     <span class="comment-msg"> ${comment.comment}</span></li>`,
-					)
-					.join('')}                                  
-      </ul>
+		)
+		.join('')}                                  
+    </ul>
   </div>
   <div class ="form-end">
     <form id="new-comment">
-      <input type="text" placeholder="Your name" class="name-input" name="username" required>
+      <input type="text" placeholder="Your name" class="input-name" name="username" required>
       <textarea name="comment" id="comment" required>Add your comment here</textarea>
-      <button class="btn-submit" id="submit" type="submit" itemname="${data.id}">Comment</button>
+      <button class="btn-submit" id="submit" type="submit">Comment</button>
     </form>
   </div>
 </div>`
-
-	const hidePopup = document.querySelector('#close')
-	hidePopup.addEventListener('click', closePopup)
-	const username = document.querySelector('.name-input').value
-	const comment = document.querySelector('#comment').value
-	const form = document.querySelector('#new-comment')
-	form.addEventListener('submit', async e => {
-		e.preventDefault()
-
-		const id = document.querySelector('#submit').getAttribute('itemname')
-		const newComment = {
-			item_id: id,
-			username,
-			comment,
-		}
-
-		await postComments(newComment)
-		form.reset()
-	})
 }
 
-export default showPopup
+export default showPopups
