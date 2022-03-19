@@ -1,11 +1,11 @@
-import { updateLikes } from './services/userServices.js';
+import { updateLikes } from './services/userServices.js'
+import { countShowList } from './count'
 
-
-const showMovies = async (data) => {
-  const movies = document.querySelector('.movies');
-  data.forEach((show, index) => {
-    if (index < 8) {
-      movies.innerHTML += `
+const showMovies = async data => {
+	const movies = document.querySelector('.movies')
+	data.forEach((show, index) => {
+		if (index < 8) {
+			movies.innerHTML += `
         <div class="movie">
         <img src=${show.image.medium} alt="movie-pic"/>
         <div class="movie-description">
@@ -23,9 +23,10 @@ const showMovies = async (data) => {
         </div>
        
         </div>
-        `;
-    }
-  });
+        `
+		}
+	})
+	countShowList()
 
   const count = document.querySelectorAll('.countLikes');
   count.forEach((e, index) => {

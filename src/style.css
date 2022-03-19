@@ -92,6 +92,7 @@ main h1 {
   color: var(--white);
   padding: 20px 0;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .movies {
@@ -259,7 +260,13 @@ form {
 
 .input-name {
   padding: 20px;
+}
 
+.counter {
+  color: var(--red);
+  font-size: 1rem;
+  top: 20px;
+  position: absolute;
 }
 
 textarea {
