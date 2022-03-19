@@ -1,8 +1,8 @@
 
-const showMovies = (data) => {
+const showMovies = async(data) => {
 	const movies = document.querySelector('.movies')
 	data.forEach((show, index) => {
-		if (index < 20) {
+		if (index < 8) {
 			movies.innerHTML += `
 
         <div class="movie">
@@ -17,10 +17,11 @@ const showMovies = (data) => {
         </div>
         </div>
         </div>
-        <button class="btn" id=${show.id}>Comments</button>
+        <button class="btn" id=${show.id} itemname="${show.name}">Comments</button>
         </div>
         `
 		}
 	})
 }
+
 export default showMovies
