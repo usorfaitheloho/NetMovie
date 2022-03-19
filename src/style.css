@@ -167,25 +167,24 @@ main h1 {
 
 .comment-section {
   position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	overflow: auto;
-	z-index: 2;
-	animation: modalopen 1s ease-out;
-	display: "none";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 2;
+  animation: modalopen 1s ease-out;
   transition: all 1s ease;
 }
 
 @keyframes modalopen {
-	from {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 }
 
 .movie-detail {
@@ -227,7 +226,7 @@ main h1 {
   padding: 50px 0;
 }
 
-.movie-image img{
+.movie-image img {
   width: 30%;
 }
 
@@ -276,7 +275,7 @@ textarea {
   height: 200px;
 }
 
-.show-comment{
+.show-comment {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,7 +284,7 @@ textarea {
 }
 
 #submit {
-   margin: 20px 0;
+  margin: 20px 0;
   padding: 10px 15px;
   border-radius: 5px;
   background-color: skyblue;

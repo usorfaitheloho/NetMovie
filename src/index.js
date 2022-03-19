@@ -37,8 +37,9 @@ const displayPopups = async (shows) => {
         };
         await postComments(newComment);
         showPopups(shows[id - 1], getComments);
+        const hidePopup = document.querySelector('.close');
+        hidePopup.addEventListener('click', closePopup);
         form.reset();
-        document.querySelector('.close-btn').addEventListener('click', closePopup());
       });
     });
   });
@@ -60,4 +61,3 @@ document.querySelector('main').addEventListener('click', async (e) => {
     await updateLikes(id, container);
   }
 });
-

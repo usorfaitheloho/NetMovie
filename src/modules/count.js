@@ -1,10 +1,10 @@
-export const countShow = list => list.length
+export const countShow = (list) => list.length;
 
 const countShows = () => {
   const showContainer = document.querySelector('.movies');
   const number = showContainer.childElementCount;
   return number;
-}
+};
 
 export const countShowList = () => {
   const showContainer = document.querySelector('.movies');
