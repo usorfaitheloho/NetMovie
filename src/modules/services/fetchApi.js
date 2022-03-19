@@ -2,7 +2,6 @@ export const get = async url => {
 	try {
 		const res = await fetch(url)
 		const datas = await res.json()
-		console.log(datas)
 		return datas
 	} catch (error) {
 		return error

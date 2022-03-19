@@ -4,7 +4,12 @@ import { fetchShows } from './modules/services/userServices.js'
 import showMovies from './modules/movies'
 import showPopups from './modules/comments.js'
 import { openPopup, closePopup } from './modules/popupAction'
-import { getComments, postComments } from './modules/services/userServices.js'
+import {
+	getComments,
+	postComments,
+	postLikes,
+	updateLikes,
+} from './modules/services/userServices.js'
 
 renderNav()
 
@@ -45,3 +50,14 @@ const shows = async () => {
 	displayPopups(list)
 }
 shows()
+
+document.querySelector('main').addEventListener('click', async e => {
+	
+	if (e.target.className === 'far fa-heart') {
+		const string = e.target.id
+		const id = parseInt(string, 10)
+		await postLikes(id)
+		const container = e.target.parentElement.nextElementSibling
+		await updateLikes(id, container)
+	}
+})

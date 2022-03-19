@@ -125,11 +125,11 @@ main h1 {
 
 .movie-description {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   color: var(--white);
   font-size: 0.8rem;
   gap: 20px;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .btn {
@@ -199,12 +199,24 @@ main h1 {
   background-blend-mode: multiply;
 }
 
+.movie-likes {
+  width: 25px;
+}
+
+.countLikes {
+  pointer-events: none;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
 .close i {
   color: var(--white);
   position: absolute;
   top: 20px;
   right: 20px;
   font-size: 32px;
+  cursor: pointer;
 }
 
 .movie-image {
@@ -245,7 +257,7 @@ form {
   margin: auto;
 }
 
-input {
+.input-name {
   padding: 20px;
 
 }
@@ -266,8 +278,8 @@ textarea {
 }
 
 #submit {
-  width: 80px;
-  padding: 6px;
+   margin: 20px 0;
+  padding: 10px 15px;
   border-radius: 5px;
   background-color: skyblue;
   align-self: center;
