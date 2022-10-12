@@ -20,7 +20,7 @@ Application was built with HTML, CSS, JavaScript and Webpack to meet the need of
 
 ## Live Demo
 
-- [Live Demo Link](https://github.com/usorfaitheloho/Movie-app/dist/)
+- [Live Demo Link](https://usorfaitheloho.github.io/NetMovie/dist/)
 
 
 - [link to video recording](https://drive.google.com/file/d/1e8F0edOXMpBgH7Fleg9ngES-H2GjbiNF/view?usp=sharing)
