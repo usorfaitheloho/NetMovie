@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# NETSHOW.
+# NETMOVIE.
 
 > Netshow is a movie web app that hosts various types of shows. Users can select any movie of their choice, see what other viewers have to say about the series, view more details about the movie, like the movie, and also leave their comments. The application was built using vanilla JavaScript, CSS, and HTML
 
